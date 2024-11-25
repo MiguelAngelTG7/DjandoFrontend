@@ -28,8 +28,8 @@ function Home() {
         api
             .delete(`/api/notes/delete/${id}/`)
             .then((res) => {
-                if (res.status === 204) alert("Note deleted!");
-                else alert("Failed to delete note.");
+                if (res.status === 204) alert("Nota Eliminada!");
+                else alert("No se pudo Eliminar la Nota.");
                 getNotes();
             })
             .catch((error) => alert(error));
@@ -42,8 +42,8 @@ function Home() {
             api
                 .put(`/api/notes/update/${editingNote.id}/`, { content, title })
                 .then((res) => {
-                    if (res.status === 200) alert("Note updated!");
-                    else alert("Failed to update note.");
+                    if (res.status === 200) alert("Nota Actualizada!");
+                    else alert("No se puedo Actualizar la Nota.");
                     setEditingNote(null); // Reset editing state
                     getNotes();
                 })
@@ -53,8 +53,8 @@ function Home() {
             api
                 .post("/api/notes/", { content, title })
                 .then((res) => {
-                    if (res.status === 201) alert("Note created!");
-                    else alert("Failed to make note.");
+                    if (res.status === 201) alert("Nota Creada!");
+                    else alert("No se pudo Crear una Nota.");
                     getNotes();
                 })
                 .catch((err) => alert(err));
